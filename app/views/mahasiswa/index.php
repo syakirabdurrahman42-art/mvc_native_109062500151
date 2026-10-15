@@ -39,21 +39,22 @@ $mahasiswa = $mahasiswa ?? [];
 
                     <td><?= htmlspecialchars($mhs['prodi'] ?? '', ENT_QUOTES, 'UTF-8') ?></td>
                     <td>
-                        <a href="index.php?page=mahasiswa&action=edit&nim=<?= urlencode($mhs['nim'] ?? '') ?>">
-                            Edit
-                        </a>
+                       
+                    <a href="index.php?page=mahasiswa&action=edit&id=<?= urlencode((string) ($mhs['id'] ?? '')) ?>">
+                         Edit
+                    </a>
+                
+                    <form action="index.php?page=mahasiswa&action=delete"
+                        method="POST"
+                        style="display:inline;"
+                        onsubmit="return confirm('Yakin ingin menghapus data ini?');">
 
-                        <form action="index.php?page=mahasiswa&action=delete"
-                              method="POST"
-                              style="display:inline;"
-                              onsubmit="return confirm('Yakin ingin menghapus data ini?');">
+                        <input type="hidden"
+                            name="id"
+                            value="<?= htmlspecialchars((string) ($mhs['id'] ?? ''), ENT_QUOTES, 'UTF-8') ?>">
 
-                            <input type="hidden"
-                                   name="nim"
-                                   value="<?= htmlspecialchars($mhs['nim'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
-
-                            <button type="submit">Hapus</button>
-                        </form>
+                        <button type="submit">Hapus</button>
+                    </form>
                     </td>
                 </tr>
             <?php endforeach; ?>

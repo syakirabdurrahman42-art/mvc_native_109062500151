@@ -27,10 +27,10 @@
                required>
         <br><br>
 
-        <label for="program_studi">Program Studi</label><br>
+        <label for="prodi">Program Studi</label><br>
         <input type="text"
-               id="program_studi"
-               name="program_studi"
+               id="prodi"
+               name="prodi"
                required>
         <br><br>
 

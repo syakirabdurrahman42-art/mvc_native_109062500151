@@ -52,9 +52,15 @@ class MahasiswaController
         exit;
     }
 
+    
     public function delete(): void
     {
         $id = (int) ($_POST['id'] ?? 0);
+
+        if ($id <= 0) {
+            exit('ID mahasiswa tidak valid.');
+        }
+
         $this->model->delete($id);
 
         header('Location: index.php?page=mahasiswa');
