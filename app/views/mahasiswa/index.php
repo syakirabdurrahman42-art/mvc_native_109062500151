@@ -14,7 +14,7 @@ $mahasiswa = $mahasiswa ?? [];
 
     <h2>Daftar Mahasiswa</h2>
 
-    <a href="index.php?controller=mahasiswa&action=create">
+    <a href="index.php?page=mahasiswa&action=create">
         Tambah Data
     </a>
 
@@ -33,29 +33,24 @@ $mahasiswa = $mahasiswa ?? [];
         <tbody>
             <?php foreach ($mahasiswa as $mhs): ?>
                 <tr>
-                    <td>
-                        <?= htmlspecialchars($mhs['nim'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                    </td>
+                    <td><?= htmlspecialchars($mhs['nim'] ?? '', ENT_QUOTES, 'UTF-8') ?></td>
+
+                    <td><?= htmlspecialchars($mhs['nama'] ?? '', ENT_QUOTES, 'UTF-8') ?></td>
+
+                    <td><?= htmlspecialchars($mhs['program_studi'] ?? '', ENT_QUOTES, 'UTF-8') ?></td>
 
                     <td>
-                        <?= htmlspecialchars($mhs['nama'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                    </td>
-
-                    <td>
-                        <?= htmlspecialchars($mhs['program_studi'] ?? '', ENT_QUOTES, 'UTF-8') ?>
-                    </td>
-
-                    <td>
-                        <a href="index.php?controller=mahasiswa&action=edit&nim=<?= urlencode($mhs['nim'] ?? '') ?>">
+                        <a href="index.php?page=mahasiswa&action=edit&nim=<?= urlencode($mhs['nim'] ?? '') ?>">
                             Edit
                         </a>
 
-                        <form action="index.php?controller=mahasiswa&action=delete"
+                        <form action="index.php?page=mahasiswa&action=delete"
                               method="POST"
                               style="display:inline;"
                               onsubmit="return confirm('Yakin ingin menghapus data ini?');">
 
-                            <input type="hidden" name="nim"
+                            <input type="hidden"
+                                   name="nim"
                                    value="<?= htmlspecialchars($mhs['nim'] ?? '', ENT_QUOTES, 'UTF-8') ?>">
 
                             <button type="submit">Hapus</button>

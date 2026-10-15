@@ -14,23 +14,28 @@ $mhs = $mhs ?? [];
 
     <h2>Edit Mahasiswa</h2>
 
-    <form action="index.php?controller=mahasiswa&action=update"
+    <form action="index.php?page=mahasiswa&action=update"
           method="POST">
 
         <label for="nim">NIM</label><br>
-        <input type="text" id="nim" name="nim"
+        <input type="text"
+               id="nim"
+               name="nim"
                value="<?= htmlspecialchars($mhs['nim'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
                readonly>
         <br><br>
 
         <label for="nama">Nama</label><br>
-        <input type="text" id="nama" name="nama"
+        <input type="text"
+               id="nama"
+               name="nama"
                value="<?= htmlspecialchars($mhs['nama'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
                required>
         <br><br>
 
         <label for="program_studi">Program Studi</label><br>
-        <input type="text" id="program_studi"
+        <input type="text"
+               id="program_studi"
                name="program_studi"
                value="<?= htmlspecialchars($mhs['program_studi'] ?? '', ENT_QUOTES, 'UTF-8') ?>"
                required>
@@ -38,7 +43,7 @@ $mhs = $mhs ?? [];
 
         <button type="submit">Update</button>
 
-        <a href="index.php?controller=mahasiswa&action=index">
+        <a href="index.php?page=mahasiswa&action=index">
             Kembali
         </a>
 
