@@ -37,8 +37,7 @@ $mahasiswa = $mahasiswa ?? [];
 
                     <td><?= htmlspecialchars($mhs['nama'] ?? '', ENT_QUOTES, 'UTF-8') ?></td>
 
-                    <td><?= htmlspecialchars($mhs['program_studi'] ?? '', ENT_QUOTES, 'UTF-8') ?></td>
-
+                    <td><?= htmlspecialchars($mhs['prodi'] ?? '', ENT_QUOTES, 'UTF-8') ?></td>
                     <td>
                         <a href="index.php?page=mahasiswa&action=edit&nim=<?= urlencode($mhs['nim'] ?? '') ?>">
                             Edit
